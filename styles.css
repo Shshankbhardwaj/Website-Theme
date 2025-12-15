@@ -6,14 +6,14 @@
 }
 
 :root {
-    --primary-color: #1a56db;
-    --secondary-color: #0e7490;
-    --accent-color: #2563eb;
+    --primary-color: #0A2463;
+    --secondary-color: #1E3A8A;
+    --accent-color: #3B82F6;
     --text-primary: #1f2937;
     --text-secondary: #6b7280;
     --text-light: #9ca3af;
     --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
+    --bg-secondary: #f8fafc;
     --bg-dark: #111827;
     --border-color: #e5e7eb;
     --success-color: #10b981;
@@ -141,9 +141,9 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #1e40af;
+    background-color: #1E3A8A;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(26, 86, 219, 0.3);
+    box-shadow: 0 4px 12px rgba(10, 36, 99, 0.3);
 }
 
 .btn-secondary {
@@ -188,76 +188,88 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+    background: linear-gradient(135deg, rgba(10, 36, 99, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%230A2463" width="1920" height="1080"/><g opacity="0.1"><circle cx="100" cy="100" r="300" fill="%23fff"/><circle cx="1500" cy="800" r="400" fill="%23fff"/><circle cx="800" cy="500" r="250" fill="%23fff"/></g></svg>');
+    background-size: cover;
+    background-position: center;
     color: white;
-    padding: 5rem 0;
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(10, 36, 99, 0.8) 0%, rgba(30, 58, 138, 0.6) 100%);
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
     font-family: 'Poppins', sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
-    margin-bottom: 3rem;
+    justify-content: center;
+    margin-bottom: 4rem;
 }
 
 .hero-stats {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
+    justify-content: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+    text-align: center;
 }
 
 .stat-item h3 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
 .stat-item p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     opacity: 0.9;
-}
-
-.hero-card {
-    background: white;
-    color: var(--text-primary);
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-}
-
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-.hero-card p {
-    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
 }
 
 /* Section Styles */
@@ -310,8 +322,15 @@ section {
 }
 
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.service-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 .service-card h3 {
@@ -375,8 +394,15 @@ section {
 }
 
 .benefit-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.5rem;
+    color: var(--primary-color);
+}
+
+.benefit-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 .benefit-card h3 {
@@ -656,7 +682,7 @@ section {
 
 /* CTA Section */
 .cta {
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+    background: linear-gradient(135deg, #0A2463 0%, #1E3A8A 50%, #3B82F6 100%);
     color: white;
     padding: 5rem 0;
 }
@@ -719,7 +745,15 @@ section {
 }
 
 .contact-icon {
-    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 .contact-item h4 {
@@ -775,7 +809,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+    box-shadow: 0 0 0 3px rgba(10, 36, 99, 0.1);
 }
 
 .form-note {
