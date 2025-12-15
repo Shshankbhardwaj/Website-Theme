@@ -11,29 +11,39 @@ Professional business financing website with form submission and admin panel.
 
 ## Setup for Vercel Deployment
 
-### 1. Install Dependencies
+### 1. Connect GitHub Repository to Vercel
 
-```bash
-npm install
-```
+1. Go to [vercel.com](https://vercel.com) and sign in
+2. Click "Add New Project"
+3. Import your GitHub repository
+4. Vercel will automatically detect the configuration
 
 ### 2. Configure Vercel Blob Storage
 
-1. Go to your Vercel project dashboard
-2. Navigate to Storage tab
-3. Create a new Blob Store
-4. Copy the `BLOB_READ_WRITE_TOKEN`
-5. Add it to your environment variables:
-   - Go to Settings → Environment Variables
-   - Add: `BLOB_READ_WRITE_TOKEN` = `your_token_here`
+**Important:** You MUST set up Blob storage for the form submissions to work.
 
-### 3. Deploy to Vercel
+1. In your Vercel project dashboard, click on the "Storage" tab
+2. Click "Create Database" → Select "Blob"
+3. Give it a name (e.g., "form-submissions")
+4. Click "Create"
+5. After creation, click "Connect to Project"
+6. Vercel will automatically add `BLOB_READ_WRITE_TOKEN` to your environment variables
+7. Go to Settings → Environment Variables to verify it's there
 
-```bash
-vercel --prod
-```
+**Note:** The token is automatically injected - you don't need to copy/paste it manually.
 
-Or connect your GitHub repository to Vercel for automatic deployments.
+### 3. Deploy
+
+Once the Blob storage is connected:
+- Vercel will automatically deploy your site
+- Any future pushes to `main` branch will trigger auto-deployments
+
+### 4. Test the Setup
+
+1. Visit your deployed site
+2. Fill out the application form at `/apply-now.html`
+3. Submit the form
+4. Go to `/admin.html` and login to see the submission
 
 ## Admin Panel Access
 
