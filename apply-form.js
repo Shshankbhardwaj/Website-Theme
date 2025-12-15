@@ -86,21 +86,50 @@ function changeStep(direction) {
 }
 
 // Form submission
-document.getElementById('multiStepForm').addEventListener('submit', function(e) {
+document.getElementById('multiStepForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     // Collect form data
     const formData = new FormData(this);
     const data = Object.fromEntries(formData);
     
-    console.log('Form submitted with data:', data);
+    // Disable submit button
+    const submitBtn = document.getElementById('submitBtn');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
     
-    // Here you would typically send the data to your server
-    // For now, show a success message
-    alert('Thank you for applying! Our team will review your application and contact you within 24 hours.');
-    
-    // Optionally redirect to home page
-    // window.location.href = 'index.html';
+    try {
+        // Send data to API
+        const response = await fetch('/api/submit-application', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+            // Show success message
+            alert('Thank you for applying! Our team will review your application and contact you within 24 hours.');
+            
+            // Reset form
+            this.reset();
+            currentStep = 1;
+            showStep(currentStep);
+        } else {
+            throw new Error(result.error || 'Submission failed');
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('There was an error submitting your application. Please try again or contact us directly.');
+    } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+    }
 });
 
 // Add input event listeners to remove error styling
