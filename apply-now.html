@@ -32,21 +32,169 @@
     <section class="apply-page">
         <div class="container">
             <div class="section-header">
-                <h1 class="section-title">Apply for Business Financing</h1>
-                <p class="section-subtitle">Get approved in as little as 24 hours. Complete the application below.</p>
+                <h1 class="section-title">Business Owners Get Up To $2M in Funding</h1>
+                <p class="section-subtitle">APPLY ONLINE IN MINUTES</p>
             </div>
 
             <div class="application-form-container">
-                <div class="application-form">
-                    <!-- Multi-step form will be added here -->
-                    <div class="coming-soon">
-                        <h2>Application Form Coming Soon</h2>
-                        <p>Our comprehensive multi-step application form is being finalized.</p>
-                        <p>For immediate assistance, please call us at <strong>(123) 456-7890</strong></p>
-                        <p>Or email: <strong>info@primebridgecapital.com</strong></p>
-                        <a href="index.html" class="btn btn-primary btn-large">Return to Home</a>
-                    </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
                 </div>
+                <div class="step-indicator" id="stepIndicator">Step <span id="currentStep">1</span> of <span id="totalSteps">9</span></div>
+                
+                <form id="multiStepForm" class="multi-step-form">
+                    <!-- Step 1: Funding Amount -->
+                    <div class="form-step active" data-step="1">
+                        <h2>How Much Do You Need? *</h2>
+                        <select name="funding_amount" required>
+                            <option value="">Select Amount</option>
+                            <option value="under-10000">Under $10,000</option>
+                            <option value="10000-20000">$10,000 - $20,000</option>
+                            <option value="20000-50000">$20,000 - $50,000</option>
+                            <option value="50000-100000">$50,000 - $100,000</option>
+                            <option value="100000-150000">$100,000 - $150,000</option>
+                            <option value="150000-200000">$150,000 - $200,000</option>
+                            <option value="200000-300000">$200,000 - $300,000</option>
+                            <option value="300000+">$300,000+</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 2: Business Bank Account -->
+                    <div class="form-step" data-step="2">
+                        <h2>Do you have a business bank account? *</h2>
+                        <select name="bank_account" required>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 3: Monthly Revenue -->
+                    <div class="form-step" data-step="3">
+                        <h2>How much business are you doing? *</h2>
+                        <select name="monthly_revenue" required>
+                            <option value="">Select Monthly Revenue</option>
+                            <option value="under-120000">Under $120,000/year</option>
+                            <option value="120000-250000">$120,000 - $250,000/year</option>
+                            <option value="250000-500000">$250,000 - $500,000/year</option>
+                            <option value="500000-1000000">$500,000 - $1,000,000/year</option>
+                            <option value="1000000-2000000">$1,000,000 - $2,000,000/year</option>
+                            <option value="2000000-3000000">$2,000,000 - $3,000,000/year</option>
+                            <option value="3000000+">$3,000,000+/year</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 4: Time in Business -->
+                    <div class="form-step" data-step="4">
+                        <h2>How long have you been in business? *</h2>
+                        <select name="time_in_business" required>
+                            <option value="">Select Duration</option>
+                            <option value="under-6months">Under 6 months</option>
+                            <option value="6months">6 months</option>
+                            <option value="1year">1 year</option>
+                            <option value="2years">2 years</option>
+                            <option value="3years">3 years</option>
+                            <option value="4years+">4+ years</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 5: Credit Score -->
+                    <div class="form-step" data-step="5">
+                        <h2>What is your Credit Score? *</h2>
+                        <select name="credit_score" required>
+                            <option value="">Select Credit Score</option>
+                            <option value="under-500">Under 500</option>
+                            <option value="500-525">500 - 525</option>
+                            <option value="525-550">525 - 550</option>
+                            <option value="550-575">550 - 575</option>
+                            <option value="575-600">575 - 600</option>
+                            <option value="600-625">600 - 625</option>
+                            <option value="625-650">625 - 650</option>
+                            <option value="650-675">650 - 675</option>
+                            <option value="675-700">675 - 700</option>
+                            <option value="700+">Above 700</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 6: Industry -->
+                    <div class="form-step" data-step="6">
+                        <h2>What is your Industry? *</h2>
+                        <select name="industry" required>
+                            <option value="">Select Industry</option>
+                            <option value="restaurant">Restaurant / Food Service</option>
+                            <option value="retail">Retail</option>
+                            <option value="construction">Construction</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="transportation">Transportation / Trucking</option>
+                            <option value="professional-services">Professional Services</option>
+                            <option value="automotive">Automotive</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="technology">Technology</option>
+                            <option value="hospitality">Hospitality</option>
+                            <option value="beauty-salon">Beauty / Salon</option>
+                            <option value="fitness">Fitness / Gym</option>
+                            <option value="agriculture">Agriculture</option>
+                            <option value="wholesale">Wholesale / Distribution</option>
+                            <option value="education">Education</option>
+                            <option value="cleaning">Cleaning Services</option>
+                            <option value="home-services">Home Services</option>
+                            <option value="marketing">Marketing / Advertising</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 7: Funding Purpose -->
+                    <div class="form-step" data-step="7">
+                        <h2>What do you need funds for? *</h2>
+                        <select name="funding_purpose" required>
+                            <option value="">Select Purpose</option>
+                            <option value="equipment">Equipment Purchase</option>
+                            <option value="expansion">Business Expansion</option>
+                            <option value="vehicle">Purchase Vehicle</option>
+                            <option value="marketing">Marketing / Sales</option>
+                            <option value="payroll">Payroll</option>
+                            <option value="inventory">Inventory</option>
+                            <option value="working-capital">Working Capital</option>
+                            <option value="real-estate">Real Estate Purchase</option>
+                            <option value="debt-consolidation">Debt Consolidation</option>
+                            <option value="renovation">Renovation / Remodeling</option>
+                            <option value="franchise">Franchise Purchase</option>
+                            <option value="technology">Technology / Software</option>
+                            <option value="hiring">Hiring / Staffing</option>
+                            <option value="emergency">Emergency Expenses</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 8: Company Name -->
+                    <div class="form-step" data-step="8">
+                        <h2>What is your Company Name? *</h2>
+                        <input type="text" name="company_name" placeholder="Enter your company name" required>
+                    </div>
+
+                    <!-- Step 9: Contact Information -->
+                    <div class="form-step" data-step="9">
+                        <h2>Contact Information *</h2>
+                        <div class="contact-fields">
+                            <input type="text" name="first_name" placeholder="First Name *" required>
+                            <input type="text" name="last_name" placeholder="Last Name *" required>
+                            <input type="email" name="email" placeholder="Email Address *" required>
+                            <input type="tel" name="phone" placeholder="Phone Number *" required>
+                            <input type="text" name="business_address" placeholder="Business Address (Optional)">
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" onclick="changeStep(-1)">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn" onclick="changeStep(1)">Next</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">Get Qualified</button>
+                    </div>
+
+                    <div class="consent-text">
+                        <p><small>By clicking on the "Get Qualified" button above, you consent, acknowledge, and agree to our <a href="terms-of-service.html">Terms of Use Agreement</a>, <a href="privacy-policy.html">Privacy Policy</a> and providing express "written" consent to share your information with up to five Network partners, and for PrimeBridge Capital, parties calling on behalf of PrimeBridge Capital, Network partners, or an authorized third party on their behalf to call you (including by automated dialing systems, text and pre-recorded voice messages) via telephone, mobile device (including SMS and MMS – charges may apply) and/or email, even if your telephone number is currently listed on any internal, corporate, state, federal or national Do-Not-Call (DNC) list. You agree that we can share your personal data with third parties, such as our mortgage partners, service providers and other affiliates, and that we can use this data for marketing and analytics, and to make your experience easier. Consent is not required in order to purchase goods and services from the lenders that reach out to you. You are also providing Express Written Consent under the Fair Credit Reporting Act for PrimeBridge Capital, selected dealer(s), and/or up to five network partners with whom you are matched to obtain your consumer credit report from your credit profile or other information from contracted Credit Bureau(s) associated with your prequalification for credit inquiry.</small></p>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
