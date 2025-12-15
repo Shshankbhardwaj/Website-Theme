@@ -2,9 +2,9 @@
   "name": "primebridge-capital",
   "version": "1.0.0",
   "description": "PrimeBridge Capital - Business Financing Solutions",
+  "type": "module",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Build complete'"
+    "dev": "vercel dev"
   },
   "dependencies": {
     "@vercel/blob": "^0.15.1"
