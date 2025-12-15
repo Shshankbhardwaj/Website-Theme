@@ -4,7 +4,6 @@ const totalSteps = 9;
 // Initialize form
 document.addEventListener('DOMContentLoaded', function() {
     showStep(currentStep);
-    updateProgressBar();
 });
 
 function showStep(step) {
@@ -18,9 +17,6 @@ function showStep(step) {
     
     // Show current step
     steps[step - 1].classList.add('active');
-    
-    // Update step indicator
-    document.getElementById('currentStep').textContent = step;
     
     // Handle button visibility
     if (step === 1) {
@@ -36,8 +32,6 @@ function showStep(step) {
         nextBtn.style.display = 'block';
         submitBtn.style.display = 'none';
     }
-    
-    updateProgressBar();
 }
 
 function changeStep(direction) {
@@ -89,11 +83,6 @@ function changeStep(direction) {
     }
     
     showStep(currentStep);
-}
-
-function updateProgressBar() {
-    const progress = (currentStep / totalSteps) * 100;
-    document.getElementById('progressBar').style.width = progress + '%';
 }
 
 // Form submission

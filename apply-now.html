@@ -37,11 +37,6 @@
             </div>
 
             <div class="application-form-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressBar"></div>
-                </div>
-                <div class="step-indicator" id="stepIndicator">Step <span id="currentStep">1</span> of <span id="totalSteps">9</span></div>
-                
                 <form id="multiStepForm" class="multi-step-form">
                     <!-- Step 1: Funding Amount -->
                     <div class="form-step active" data-step="1">
@@ -183,16 +178,16 @@
                             <input type="tel" name="phone" placeholder="Phone Number *" required>
                             <input type="text" name="business_address" placeholder="Business Address (Optional)">
                         </div>
+                        
+                        <div class="consent-text">
+                            <p><small>By clicking on the "Get Qualified" button below, you consent, acknowledge, and agree to our <a href="terms-of-service.html">Terms of Use Agreement</a>, <a href="privacy-policy.html">Privacy Policy</a> and providing express "written" consent to share your information with up to five Network partners, and for PrimeBridge Capital (PBC), parties calling on behalf of PrimeBridge Capital (PBC), Network partners, or an authorized third party on their behalf to call you (including by automated dialing systems, text and pre-recorded voice messages) via telephone, mobile device (including SMS and MMS – charges may apply) and/or email, even if your telephone number is currently listed on any internal, corporate, state, federal or national Do-Not-Call (DNC) list. You agree that we can share your personal data with third parties, such as our mortgage partners, service providers and other affiliates, and that we can use this data for marketing and analytics, and to make your experience easier. Consent is not required in order to purchase goods and services from the lenders that reach out to you. You are also providing Express Written Consent under the Fair Credit Reporting Act for PrimeBridge Capital (PBC), selected dealer(s), and/or up to five network partners with whom you are matched to obtain your consumer credit report from your credit profile or other information from contracted Credit Bureau(s) associated with your prequalification for credit inquiry.</small></p>
+                        </div>
                     </div>
 
                     <div class="form-navigation">
                         <button type="button" class="btn btn-secondary" id="prevBtn" onclick="changeStep(-1)">Previous</button>
                         <button type="button" class="btn btn-primary" id="nextBtn" onclick="changeStep(1)">Next</button>
                         <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">Get Qualified</button>
-                    </div>
-
-                    <div class="consent-text">
-                        <p><small>By clicking on the "Get Qualified" button above, you consent, acknowledge, and agree to our <a href="terms-of-service.html">Terms of Use Agreement</a>, <a href="privacy-policy.html">Privacy Policy</a> and providing express "written" consent to share your information with up to five Network partners, and for PrimeBridge Capital (PBC), parties calling on behalf of PrimeBridge Capital (PBC), Network partners, or an authorized third party on their behalf to call you (including by automated dialing systems, text and pre-recorded voice messages) via telephone, mobile device (including SMS and MMS – charges may apply) and/or email, even if your telephone number is currently listed on any internal, corporate, state, federal or national Do-Not-Call (DNC) list. You agree that we can share your personal data with third parties, such as our mortgage partners, service providers and other affiliates, and that we can use this data for marketing and analytics, and to make your experience easier. Consent is not required in order to purchase goods and services from the lenders that reach out to you. You are also providing Express Written Consent under the Fair Credit Reporting Act for PrimeBridge Capital (PBC), selected dealer(s), and/or up to five network partners with whom you are matched to obtain your consumer credit report from your credit profile or other information from contracted Credit Bureau(s) associated with your prequalification for credit inquiry.</small></p>
                     </div>
                 </form>
             </div>
