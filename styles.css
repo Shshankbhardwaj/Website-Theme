@@ -618,12 +618,17 @@ section {
     transform: translateY(-4px);
 }
 
-.investors-note {
-    text-align: center;
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    font-weight: 600;
-    margin-top: 1rem;
+.many-more {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white !important;
+    border: none !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.many-more:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(10, 36, 99, 0.3);
 }
 
 /* Testimonials Section */
