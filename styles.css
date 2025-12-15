@@ -444,6 +444,39 @@ section {
     font-size: 1.25rem;
 }
 
+/* Clients Section */
+.clients-section {
+    background: var(--bg-secondary);
+    padding: 4rem 0;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.client-logo {
+    text-align: center;
+    padding: 1.25rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 /* Investors Section */
 .investors {
     background: white;
@@ -455,6 +488,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .investor-logo {
@@ -472,6 +506,14 @@ section {
     border-color: var(--primary-color);
     color: var(--primary-color);
     transform: translateY(-4px);
+}
+
+.investors-note {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 /* Testimonials Section */
@@ -935,6 +977,10 @@ section {
     }
 
     .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .clients-grid {
         grid-template-columns: 1fr;
     }
 }
