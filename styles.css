@@ -54,11 +54,40 @@ body {
     padding: 1rem 0;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .logo h2 {
     font-size: 1.5rem;
     color: var(--primary-color);
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.logo-subtitle {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-subtitle {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .nav-menu {
